@@ -1,0 +1,56 @@
+name: Deployment
+
+on:
+  push:
+    branches:
+      - staging
+  workflow_dispatch:
+    branches:
+      - main
+
+jobs:
+  deploy-staging:
+    if: github.ref == 'refs/heads/staging'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Build the application
+        run: yarn build
+
+      - name: Deploy to staging server
+        run: |
+          scp -r ./dist user@staging-server:/path/to/app
+          ssh user@staging-server 'pm2 restart all'
+
+  deploy-production:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Build the application
+        run: yarn build
+
+      - name: Deploy to production server
+        run: |
+          scp -r ./dist user@production-server:/path/to/app
+          ssh user@production-server 'pm2 restart all'
