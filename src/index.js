@@ -8,5 +8,3 @@ export default function version () {
     const pkg = JSON.parse(readFileSync(pkgPath, 'utf8'));
     return pkg.version;
 };
-
-console.log(version());
