@@ -2,7 +2,7 @@
     "branches": [
         "main",
         "staging",
-    { "name": "development", "prerelease": true }
+        "development"
     ],
     "plugins": [
       "@semantic-release/commit-analyzer",
