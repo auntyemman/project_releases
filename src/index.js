@@ -9,4 +9,3 @@ export default function version () {
     return pkg.version;
 };
 
-// console.log(version());
