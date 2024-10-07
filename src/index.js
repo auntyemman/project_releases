@@ -1,4 +1,4 @@
-import { readFileSync } from 'fs';
+import { readFileSync, writeFileSync } from 'fs';
 import { resolve } from 'path';
 
 
@@ -8,3 +8,6 @@ export default function version () {
     const pkg = JSON.parse(readFileSync(pkgPath, 'utf8'));
     return pkg.version;
 };
+
+// create version.txt and write the version into it
+writeFileSync('version.txt', version());

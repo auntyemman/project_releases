@@ -31,4 +31,5 @@ jobs:
       - name: Run semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # NPM_TOKEN: ${{ secrets.NPM_TOKEN }} # if you want to publish to npm or library. @semantic-release/npm plugin will be needed at the releaserc json configuration file for this
         run: yarn release  # or npm run release
