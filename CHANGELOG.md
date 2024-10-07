@@ -1,3 +1,11 @@
+# [2.1.0](https://github.com/auntyemman/project_releases/compare/v2.0.0...v2.1.0) (2024-10-07)
+
+
+### Features
+
+* created a read stream ([288f1df](https://github.com/auntyemman/project_releases/commit/288f1dfce9c9c7b9ef16372404aa04198d61f240))
+* created a readstream ([d9e9baf](https://github.com/auntyemman/project_releases/commit/d9e9baf740b22e239117bb525ba33c3e09c733e8))
+
 # [2.0.0](https://github.com/auntyemman/project_releases/compare/v1.0.0...v2.0.0) (2024-10-07)
 
 
